@@ -1,0 +1,71 @@
+bin/
+obj/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+.vs/
+store/*.db
+store/*.db-*
+
+# Agent instances (personalities are not framework)
+agents/*
+patches/*
+!patches/.gitkeep
+.claude/settings.local.json
+releases/
+
+# Rust build artifacts
+target/
+
+# .NET build logs
+*.binlog
+
+# IDE / tool configs
+.qoder/
+context.md
+# All .md files are removed from git tracking (cleanup)
+# Only essential project docs are kept tracked
+*.md
+!AGENTS.md
+!ARCHITECTURE.md
+!README.md
+!SETUP.md
+
+# IDE / tool config directories (ephemeral, per-machine)
+.claw/
+.gemini/commands/opsx/
+.opencode/
+.serena/
+.superpowers/brainstorm/
+
+# Agent runtime artifacts
+.aether/trash/
+
+# Database files (anywhere)
+*.db
+*.db-shm
+*.db-wal
+
+# Other non-code artifacts
+*.plan
+reasonix.toml
+*.mdbk
+HEARTBEAT_OK
+migrate_vesta.sh
+
+# Maria 2B substrate (personality/boundary files, not framework code)
+2B/
+
+# Plugin build artifacts (source lives in src/Plugins)
+plugins/*/*.dll
+plugins/*/*.pdb
+
+# Patch/merge droppings
+*.orig
+*.rej
+
+# Rust build output
+target/

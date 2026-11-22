@@ -1,0 +1,23 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Aether.Terminal.App">
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Themes/ForgeTheme.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Map Terminal brushes to Forge theme -->
+            <StaticResource x:Key="TerminalBackground" ResourceKey="ForgeBackground" />
+            <StaticResource x:Key="TerminalForeground" ResourceKey="ForgeAmber" />
+            <StaticResource x:Key="TerminalDim" ResourceKey="ForgeDim" />
+            <StaticResource x:Key="TerminalAccent" ResourceKey="ForgeAccent" />
+            <StaticResource x:Key="TerminalUserBubble" ResourceKey="ForgeUserBubble" />
+            <StaticResource x:Key="TerminalToolBubble" ResourceKey="ForgeToolBubble" />
+            <StaticResource x:Key="TerminalError" ResourceKey="ForgeError" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,31 @@
+# rule path-pattern # reason
+colony-info .gitignore # sample name in docs, config or a fixture
+colony-info ARCHITECTURE.md # sample name in docs, config or a fixture
+colony-info SETUP.md # WebSocket protocol field name
+colony-info clients/aether-tui/README.md # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/config.rs # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/main.rs # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/ui/brainstorm_tests.rs # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/ui/context_manager_tests.rs # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/ui/git_tests.rs # sample name in docs, config or a fixture
+colony-info clients/aether-tui/src/ui/tdd_tests.rs # sample name in docs, config or a fixture
+colony-info scripts/aether-cline-plugin/index.ts # sample name in docs, config or a fixture
+colony-info scripts/aether-cline-plugin/package.json # sample name in docs, config or a fixture
+colony-info src/Aether.Terminal/TerminalViewModel.cs # sample name in docs, config or a fixture
+colony-info src/Aether.Terminal/Views/ChatView.axaml # sample name in docs, config or a fixture
+colony-info src/Aether/Agents/AgentProfile.cs # sample name in docs, config or a fixture
+colony-info src/Aether/Channels/WebSocketChannel.cs # WebSocket protocol field name
+colony-info src/Aether/Cli/AetherCli.cs # sample name in docs, config or a fixture
+colony-info src/Aether/SelfImprovement/SelfImprovementService.cs # sample name in docs, config or a fixture
+colony-info src/Aether/web/app.js # sample name in docs, config or a fixture
+colony-info src/Aether/web/index.html # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/AgentHeartbeatServiceTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/AgentIntegrationTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/AgentProfileTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/BackwardCompatibilityTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/ChannelBindingResolutionTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/ConfigLoaderTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/Scheduling/CronFrontmatterParserTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/TerminalViewModelTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/TuiStartupTests.cs # sample name in docs, config or a fixture
+colony-info tests/Aether.Tests/WebSocketChannelTests.cs # WebSocket protocol field name

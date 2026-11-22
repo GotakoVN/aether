@@ -1,0 +1,46 @@
+using Aether.Agents;
+using Aether.Agent;
+using Aether.Config;
+using Aether.Memory;
+using Aether.Providers;
+using Aether.Sessions;
+using Aether.Skills;
+using Aether.Tooling;
+using Microsoft.Extensions.Logging.Abstractions;
+
+namespace Aether.Tests;
+
+public sealed class AgentIntegrationTests : IDisposable
+{
+    private readonly string _agentDir;
+
+    public AgentIntegrationTests()
+    {
+        _agentDir = Path.Combine(Path.GetTempPath(), $"aether-int-{Guid.NewGuid()}");
+        Directory.CreateDirectory(_agentDir);
+        Directory.CreateDirectory(Path.Combine(_agentDir, "memory"));
+        File.WriteAllText(Path.Combine(_agentDir, "SOUL.md"), "You're Maria. Warm, playful, direct.");
+        File.WriteAllText(Path.Combine(_agentDir, "USER.md"), "User is Sam.");
+    }
+
+    public void Dispose()
+    {
+        if (Directory.Exists(_agentDir))
+            Directory.Delete(_agentDir, recursive: true);
+    }
+
+    [Fact]
+    public async Task AetherSoul_UsesAgentPersonaInSystemPrompt()
+    {
+        File.WriteAllText(Path.Combine(_agentDir, "AGENTS.md"), "You are Maria. User is Sam.");
+        var profile = new AgentProfile("maria", _agentDir, new AgentConfig(), new AgentModelConfig());
+        var llm = new FakeLlmProvider("test", "test-model", new LlmResponse("Hello!"));
+        var tools = new FakeToolExecutor();
+
+        var soul = new AetherSoul(llm, tools, profile);
+        var response = await soul.ProcessAsync("maria", "Hello!");
+
+        Assert.Contains("Maria", llm.LastRequest!.SystemPrompt);
+        Assert.Contains("Sam", llm.LastRequest.SystemPrompt);
+    }
+}
